@@ -105,8 +105,12 @@ and change the json object to (remember to update the token as per the instructi
 this will give you response message "user updated successfully" on successful execution and you will be able to see the updated user information in the database. 
 8. Now let's check our delete endpoint to delete the user from the database set the request method to DELETE and then change route to 
 ```
-http://127.0.0.1:8000/update
+http://127.0.0.1:8000/delete
 ```
 in headers choose header as Authentication and value as jwt token and then simply click  on the send button on success full deletion it will give the response as "user deleted successfully". 
 
 In this way we have simply implemented the user management using firebase authentication and firestore database. 
+
+if you face any issues fill free to connect with me on 
+linkedIn : https://www.linkedin.com/in/sanyog-mahajan-8288a7204/
+email : sayogdmahajan@gmail.com
