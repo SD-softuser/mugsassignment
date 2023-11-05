@@ -112,5 +112,6 @@ in headers choose header as Authentication and value as jwt token and then simpl
 In this way we have simply implemented the user management using firebase authentication and firestore database. 
 
 if you face any issues fill free to connect with me on 
-linkedIn : https://www.linkedin.com/in/sanyog-mahajan-8288a7204/
-email : sayogdmahajan@gmail.com
+
+- linkedIn : https://www.linkedin.com/in/sanyog-mahajan-8288a7204/
+- email : sayogdmahajan@gmail.com
