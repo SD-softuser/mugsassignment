@@ -94,6 +94,28 @@ async def update(request: Request):
             print(error_message)
             return HTTPException(detail={'message': 'Error updating user'}, status_code=400)
 
+# delete endpoint
+@app.delete("/delete", include_in_schema=False)
+async def delete_user(request: Request):
+    headers = request.headers
+    jwt = headers.get('Authorization')  # Get the JWT token from the request
+    
+    try:
+        user = auth.verify_id_token(jwt)
+        uid = user['uid']
+
+        auth.delete_user(uid)
+        db.collection("users").document(uid).delete()
+
+        return JSONResponse(content={'message': 'User deleted successfully'}, status_code=200)
+    except Exception as e:
+        error_message = str(e)
+        if 'USER_NOT_FOUND' in error_message:
+            return HTTPException(detail={'message': 'User not found'}, status_code=404)
+        else:
+            print(error_message)
+            return HTTPException(detail={'message': 'Error deleting user'}, status_code=400)
+
 # ping endpoint
 @app.post("/ping", include_in_schema=False)
 async def validate(request: Request):
